@@ -1,0 +1,89 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João da Silva",
+      "email": "admin@gmail.com",
+      "senha": "123456",
+      "perfil": "ADMIN"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Carlos Silva",
+      "email": "carlos@gmail.com",
+      "telefone": "(77) 99999-1111"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro Santos",
+       "email": "pedro@gmail.com",
+      "telefone": "(77) 99999-2222"
+    },
+    {
+      "id": 3,
+      "nome": "Marcos Oliveira",
+       "email": "marcos@gmail.com",
+      "telefone": "(77) 99999-3333"
+    }
+  ],
+  "barbeiros": [
+    {
+      "id": 1,
+      "nome": "João Pedro",
+      "especialidade": "Corte e Barba"
+    },
+    {
+      "id": 2,
+      "nome": "Marcelo Alves",
+      "especialidade": "Corte Degradê"
+    }
+  ],
+  "servicos": [
+    {
+      "id": 1,
+      "nome": "Corte",
+      "preco": 35
+    },
+    {
+      "id": 2,
+      "nome": "Barba",
+      "preco": 25
+    },
+    {
+      "id": 3,
+      "nome": "Corte + Barba",
+      "preco": 55
+    }
+  ],
+  "agendamentos": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "barbeiroId": 1,
+      "servicoId": 1,
+      "data": "2026-08-24",
+      "horario": "09:00",
+      "status": "CONFIRMADO"
+    },
+    {
+      "id": 2,
+      "clienteId": 2,
+      "barbeiroId": 2,
+      "servicoId": 3,
+      "data": "2026-08-24",
+      "horario": "10:00",
+      "status": "CONFIRMADO"
+    },
+    {
+      "id": 3,
+      "clienteId": 3,
+      "barbeiroId": 1,
+      "servicoId": 2,
+      "data": "2026-08-24",
+      "horario": "11:00",
+      "status": "AGUARDANDO"
+    }
+  ]
+}

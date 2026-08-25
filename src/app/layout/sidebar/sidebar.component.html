@@ -1,0 +1,135 @@
+<aside class="sidebar">
+
+
+  <div class="logo">
+
+    <div class="logo-icon">
+      <mat-icon>content_cut</mat-icon>
+    </div>
+
+    <div class="logo-text">
+      <strong>BARBEARIA</strong>
+      <span>GESTÃO</span>
+    </div>
+
+  </div>
+
+
+
+  <nav class="menu">
+
+    <span class="menu-title">
+      MENU PRINCIPAL
+    </span>
+
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </a>
+
+    <a
+      routerLink="/agendamentos"
+      routerLinkActive="active"
+    >
+      <mat-icon>calendar_month</mat-icon>
+      <span>Agendamentos</span>
+    </a>
+
+    <a
+      routerLink="/clientes"
+      routerLinkActive="active"
+    >
+      <mat-icon>group</mat-icon>
+      <span>Clientes</span>
+    </a>
+
+    <a
+      routerLink="/barbeiros"
+      routerLinkActive="active"
+    >
+      <mat-icon>content_cut</mat-icon>
+      <span>Barbeiros</span>
+    </a>
+
+    <a
+      routerLink="/servicos"
+      routerLinkActive="active"
+    >
+      <mat-icon>style</mat-icon>
+      <span>Serviços</span>
+    </a>
+
+    <a
+      routerLink="/horarios"
+      routerLinkActive="active"
+    >
+      <mat-icon>schedule</mat-icon>
+      <span>Horários</span>
+    </a>
+
+
+    <span class="menu-title secondary">
+      OUTROS
+    </span>
+
+    <a
+      routerLink="/avaliacoes"
+      routerLinkActive="active"
+    >
+      <mat-icon>star_outline</mat-icon>
+      <span>Avaliações</span>
+    </a>
+
+    <a
+      routerLink="/relatorios"
+      routerLinkActive="active"
+    >
+      <mat-icon>assessment</mat-icon>
+      <span>Relatórios</span>
+    </a>
+
+    <a
+      routerLink="/notificacoes"
+      routerLinkActive="active"
+    >
+      <mat-icon>notifications_none</mat-icon>
+      <span>Notificações</span>
+    </a>
+
+    <a
+      routerLink="/configuracoes"
+      routerLinkActive="active"
+    >
+      <mat-icon>settings</mat-icon>
+      <span>Configurações</span>
+    </a>
+
+  </nav>
+
+
+  <!-- USUÁRIO -->
+  <div class="user-profile">
+
+    <div class="avatar">
+      JD
+    </div>
+
+    <div class="user-info">
+      <strong>John Doe</strong>
+      <span>Administrador</span>
+    </div>
+
+    <button
+      mat-icon-button
+      aria-label="Opções do usuário"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+  </div>
+
+</aside>

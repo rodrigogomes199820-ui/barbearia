@@ -1,0 +1,61 @@
+<mat-toolbar class="navbar">
+
+
+  <button
+     (click)="abrirMenu()"
+    mat-icon-button
+    class="menu-button"
+    aria-label="Abrir menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="search-container">
+    <mat-icon>search</mat-icon>
+
+    <input
+      type="text"
+      placeholder="Buscar clientes, agendamentos, serviços..."
+    >
+  </div>
+
+  <span class="spacer"></span>
+
+  <button
+    mat-icon-button
+    matBadge="3"
+    matBadgeColor="warn"
+    class="navbar-button"
+    aria-label="Notificações"
+  >
+    <mat-icon>notifications_none</mat-icon>
+  </button>
+
+
+
+
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="profileMenu"
+    class="navbar-button"
+    aria-label="Perfil"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu
+   #profileMenu="matMenu"
+  >
+
+
+  <button mat-menu-item
+    (click)="logout()"
+  >
+    <mat-icon>logout</mat-icon>
+    <span>Sair</span>
+  </button>
+
+  </mat-menu>
+
+</mat-toolbar>

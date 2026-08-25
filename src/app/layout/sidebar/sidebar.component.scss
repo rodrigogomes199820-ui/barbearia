@@ -1,0 +1,253 @@
+.sidebar {
+  width: 245px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #141a23;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  height: 96px;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  mat-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 32px;
+
+    color: #c99a4b;
+  }
+
+  h2 {
+    margin: 0;
+
+    color: #e7c98d;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+  }
+
+  span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #858c96;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 1.8px;
+  }
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  flex: 1;
+
+  padding: 18px 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  overflow-y: auto;
+
+  /* scrollbar */
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #303846;
+    border-radius: 10px;
+  }
+
+  a {
+    position: relative;
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 9px;
+
+    color: #aeb4bd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+
+    mat-icon {
+      width: 21px;
+      height: 21px;
+
+      font-size: 21px;
+
+      color: #7f8792;
+
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.045);
+
+      color: #ffffff;
+
+      mat-icon {
+        color: #c99a4b;
+      }
+    }
+
+    &.active {
+      background: rgba(201, 154, 75, 0.12);
+
+      color: #e7c98d;
+
+      font-weight: 500;
+
+      mat-icon {
+        color: #c99a4b;
+      }
+
+      /* indicador lateral */
+
+      &::before {
+        content: '';
+
+        position: absolute;
+
+        left: 0;
+        top: 11px;
+
+        width: 3px;
+        height: 26px;
+
+        border-radius: 0 4px 4px 0;
+
+        background: #c99a4b;
+      }
+    }
+  }
+}
+
+
+/* =========================
+   USUÁRIO
+========================= */
+
+.user-profile {
+  margin: 10px 12px 12px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  background: #1b222d;
+
+  border: 1px solid rgba(255, 255, 255, 0.04);
+
+  border-radius: 10px;
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #c99a4b;
+
+    color: #141a23;
+
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .user-info {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    strong {
+      overflow: hidden;
+
+      color: #ffffff;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    span {
+      margin-top: 3px;
+
+      color: #7f8792;
+
+      font-size: 11px;
+    }
+  }
+
+  button {
+    width: 32px;
+    height: 32px;
+
+    color: #7f8792;
+
+    transition: 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+
+      color: #ffffff;
+    }
+  }
+}

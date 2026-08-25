@@ -1,0 +1,120 @@
+<div class="dashboard">
+
+  <div class="dashboard-header">
+    <div>
+      <h1>Dashboard</h1>
+      <p>Visão geral da sua barbearia</p>
+    </div>
+
+    <span class="date">
+      Hoje
+    </span>
+  </div>
+
+
+  <!-- CARDS -->
+
+  <div class="summary-cards">
+
+    <mat-card>
+      <div class="card-icon">
+        <mat-icon>group</mat-icon>
+      </div>
+
+      <div class="card-info">
+        <span>Clientes</span>
+        <strong>{{ totalClientes }}</strong>
+      </div>
+    </mat-card>
+
+
+    <mat-card>
+      <div class="card-icon">
+        <mat-icon>calendar_month</mat-icon>
+      </div>
+
+      <div class="card-info">
+        <span>Agendamentos</span>
+        <strong>{{ totalAgendamentos }}</strong>
+      </div>
+    </mat-card>
+
+
+    <mat-card>
+      <div class="card-icon">
+        <mat-icon>content_cut</mat-icon>
+      </div>
+
+      <div class="card-info">
+        <span>Barbeiros</span>
+        <strong>{{ totalBarbeiros }}</strong>
+      </div>
+    </mat-card>
+
+
+    <mat-card>
+      <div class="card-icon">
+        <mat-icon>payments</mat-icon>
+      </div>
+
+      <div class="card-info">
+        <span>Faturamento</span>
+        <strong>R$ {{ faturamento }}</strong>
+      </div>
+    </mat-card>
+
+  </div>
+
+
+  <!-- AGENDAMENTOS -->
+
+  <mat-card class="appointments">
+
+    <div class="section-header">
+      <div>
+        <h2>Agendamentos de hoje</h2>
+        <p>Confira os atendimentos programados.</p>
+      </div>
+
+      <mat-icon>calendar_today</mat-icon>
+    </div>
+
+
+    <div
+      class="appointment"
+      *ngFor="let agendamento of agendamentos"
+    >
+
+      <div class="time">
+        {{ agendamento.horario }}
+      </div>
+
+      <div>
+        <strong>Cliente #{{ agendamento.clienteId }}</strong>
+        <span>Serviço #{{ agendamento.servicoId }}</span>
+      </div>
+
+      <div class="barber">
+        <mat-icon>person_outline</mat-icon>
+        Barbeiro #{{ agendamento.barbeiroId }}
+      </div>
+
+      <span class="status">
+        {{ agendamento.status }}
+      </span>
+
+    </div>
+
+
+    <div
+      class="empty"
+      *ngIf="agendamentos.length === 0"
+    >
+      <mat-icon>event_busy</mat-icon>
+
+      <span>Nenhum agendamento para hoje.</span>
+    </div>
+
+  </mat-card>
+
+</div>
