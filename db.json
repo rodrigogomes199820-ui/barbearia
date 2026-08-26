@@ -116,5 +116,14 @@
       "status": "AGUARDANDO"
     }
   ],
+  "historicos": [
+  {
+    "id": "1",
+    "clienteId": "3",
+    "tipo": "CADASTRO",
+    "descricao": "Cliente cadastrado",
+    "data": "2026-08-26T19:30:00"
+  }
+],
   "$schema": "./node_modules/json-server/schema.json"
 }

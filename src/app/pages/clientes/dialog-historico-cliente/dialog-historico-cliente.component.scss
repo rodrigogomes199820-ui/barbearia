@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.cliente-info span {
+  font-size: 12px;
+  color: #888;
+}
+
+.cliente-info strong {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2a5db0;
+}
+
+.historico-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.historico-data {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.historico-conteudo strong {
+  display: block;
+  font-size: 14px;
+  color: #2a5db0;
+}
+
+.historico-conteudo p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.sem-historico {
+  padding: 30px 0;
+  text-align: center;
+  color: #888;
+}

@@ -1,16 +1,54 @@
 <app-dialog-base
-  titulo="Historico"
+  titulo="Histórico"
   (fechar)="cancelar()"
 >
 
   <div class="container">
 
-   
+    <div class="cliente-info">
+      <span>Histórico do cliente</span>
+
+      <strong>
+        {{ cliente.nome }}
+      </strong>
+    </div>
+
+
+    <div
+      class="historico-item"
+      *ngFor="let item of historico"
+    >
+
+      <div class="historico-data">
+        {{ item.data | date:'dd/MM/yyyy HH:mm' }}
+      </div>
+
+      <div class="historico-conteudo">
+
+        <strong>
+          {{ item.tipo }}
+        </strong>
+
+        <p>
+          {{ item.descricao }}
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="sem-historico"
+      *ngIf="historico.length === 0"
+    >
+      Nenhum histórico encontrado.
+    </div>
 
   </div>
 
 
-  <div dialog-actions class="botoes">
+  <div dialog-actions>
 
     <button
       mat-stroked-button
@@ -20,10 +58,6 @@
       Fechar
     </button>
 
-   
-
   </div>
 
 </app-dialog-base>
-
-
