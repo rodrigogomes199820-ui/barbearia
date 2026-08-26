@@ -1,6 +1,8 @@
 import { ClientesService } from './../../services/clientes.service';
 import { map } from 'rxjs/operators';
 import { Component,OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogClienteComponent } from './dialog-cliente/dialog-cliente.component';
 
 
 @Component({
@@ -18,7 +20,8 @@ displayedColumns: string[] = [
 ];
 
 constructor(
-private ClientesService : ClientesService
+private ClientesService : ClientesService,
+private dialog: MatDialog
 
 ){
 
@@ -49,6 +52,23 @@ loadCliente(): void {
       this.dataSource = clientes;
 
     });
+
+}
+
+abrirDialog(): void {
+
+  this.dialog.open(DialogClienteComponent, {
+
+    width: '400px',
+    maxWidth: '95vw',
+
+    autoFocus: false,
+
+    data: {
+      modo: 'adicionar'
+    }
+
+  });
 
 }
 

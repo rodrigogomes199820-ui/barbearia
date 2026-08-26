@@ -16,6 +16,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './main/main.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { DialogClienteComponent } from './pages/clientes/dialog-cliente/dialog-cliente.component';
+
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     DashboardComponent,
     
     MainComponent,
-         ClientesComponent 
+         ClientesComponent,
+         DialogClienteComponent,
+        
   ],
   imports: [
     BrowserModule,

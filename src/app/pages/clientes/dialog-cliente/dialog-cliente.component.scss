@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+.modal-title h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  color: #2a5db0;
+}
+
+.close-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: #999;
+  transition: color 0.15s ease;
+}
+
+.close-icon mat-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+}
+
+.close-icon mat-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.close-icon:hover {
+  color: #333;
+}
+
+
+
+.modal-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background: #fafafa;
+}
+
+.field input:focus {
+  border-color: #2a6fd1;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(42, 111, 209, 0.1);
+}
+
+.field input.ng-invalid.ng-touched {
+  border-color: #d32f2f;
+}
+
+.field input::placeholder {
+  color: #aaa;
+}
+
+.field .error {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid #eeeeee;
+}
+
+.btn-fechar {
+  padding: 6px 16px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-color: #dcdcdc !important;
+  color: #555 !important;
+  line-height: normal !important;
+}
+
+.btn-adicionar {
+  padding: 6px 20px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  background-color: #2a6fd1 !important;
+  color: #fff !important;
+  line-height: normal !important;
+  box-shadow: none !important;
+}
+
+.btn-adicionar:hover {
+  background-color: #1f5cb8 !important;
+}

@@ -1,0 +1,146 @@
+<div class="modal-card">
+
+  <div class="modal-header">
+
+    <div class="modal-title">
+
+      <h2>Adicionar cliente</h2>
+
+    </div>
+
+     <button
+       mat-icon-button
+       type="button"
+       class="close-icon"
+       aria-label="Fechar"
+       (click)="cancelar()"
+     >
+        <mat-icon aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.3 9.17 12 2.88 5.7 4.29 4.29 10.59 10.59 16.89 4.29z" />
+          </svg>
+        </mat-icon>
+     </button>
+
+  </div>
+
+
+  <form
+    [formGroup]="clienteForm"
+    (ngSubmit)="salvar()"
+  >
+
+    <div class="modal-body">
+
+      <div class="field">
+
+        <label>Nome completo</label>
+
+        <input
+          matInput
+          type="text"
+          placeholder="Digite o nome completo"
+          formControlName="nome"
+        />
+
+        <span
+          class="error"
+          *ngIf="
+            clienteForm.get('nome')?.invalid &&
+            clienteForm.get('nome')?.touched
+          "
+        >
+          Nome é obrigatório
+        </span>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Email</label>
+
+        <input
+          matInput
+          type="email"
+          placeholder="exemplo@email.com"
+          formControlName="email"
+        />
+
+        <span
+          class="error"
+          *ngIf="
+            clienteForm.get('email')?.invalid &&
+            clienteForm.get('email')?.touched
+          "
+        >
+          Informe um email válido
+        </span>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Data de nascimento</label>
+
+        <input
+          matInput
+          type="date"
+          formControlName="dataNascimento"
+        />
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Telefone</label>
+
+        <input
+          matInput
+          type="tel"
+          placeholder="(00) 00000-0000"
+          formControlName="telefone"
+        />
+
+        <span
+          class="error"
+          *ngIf="
+            clienteForm.get('telefone')?.invalid &&
+            clienteForm.get('telefone')?.touched
+          "
+        >
+          Telefone é obrigatório
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="modal-footer">
+
+      <button
+        mat-stroked-button
+        type="button"
+        class="btn-fechar"
+        (click)="cancelar()"
+      >
+        Fechar
+      </button>
+
+      <button
+        mat-flat-button
+        type="submit"
+        class="btn-adicionar"
+        [disabled]="clienteForm.invalid"
+      >
+        Adicionar
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
