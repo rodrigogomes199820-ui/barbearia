@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './main/main.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { DialogClienteComponent } from './pages/clientes/dialog-cliente/dialog-cliente.component';
+import { DialogBaseComponent } from './shared/components/dialog-base/dialog-base.component';
 
 
 
@@ -31,6 +32,7 @@ import { DialogClienteComponent } from './pages/clientes/dialog-cliente/dialog-c
     MainComponent,
          ClientesComponent,
          DialogClienteComponent,
+         DialogBaseComponent,
         
   ],
   imports: [

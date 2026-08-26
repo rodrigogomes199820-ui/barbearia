@@ -1,9 +1,9 @@
 import { ClientesService } from './../../services/clientes.service';
-import { map } from 'rxjs/operators';
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogClienteComponent } from './dialog-cliente/dialog-cliente.component';
+import { PageEvent } from '@angular/material/paginator';
 
+import { DialogClienteComponent } from './dialog-cliente/dialog-cliente.component';
 
 @Component({
   selector: 'app-clientes',
@@ -11,31 +11,42 @@ import { DialogClienteComponent } from './dialog-cliente/dialog-cliente.componen
   styleUrls: ['./clientes.component.scss']
 })
 export class ClientesComponent implements OnInit {
-dataSource: any[] = [] ;
-displayedColumns: string[] = [
-  'nome',
-  'email',
-  'telefone',
-  'acoes'
-];
 
-constructor(
-private ClientesService : ClientesService,
-private dialog: MatDialog
+  dataSource: any[] = [];
 
-){
+  page = 1;
+  limit = 5;
+  totalClientes = 0;
 
-}
-ngOnInit(): void{
-   this.loadCliente()
-}
+  displayedColumns: string[] = [
+    'nome',
+    'email',
+    'telefone',
+    'acoes'
+  ];
 
-loadCliente(): void {
+  constructor(
+    private clientesService: ClientesService,
+    private dialog: MatDialog
+  ) {}
 
-  this.ClientesService.getClientes()
-    .pipe(
-      map((clientes) => {
-        return clientes.map((cliente) => {
+  ngOnInit(): void {
+    this.loadCliente();
+  }
+
+  loadCliente(): void {
+
+    this.clientesService
+      .getClientes(this.page, this.limit)
+      .subscribe((resposta) => {
+
+        const corpo = resposta.body;
+        const clientes = Array.isArray(corpo)
+          ? corpo
+          : corpo?.data ?? [];
+
+        this.dataSource = clientes.map((cliente: any) => {
+
           return {
             id: cliente.id,
             nome: cliente.nome,
@@ -45,31 +56,43 @@ loadCliente(): void {
 
         });
 
-      })
+        this.totalClientes = Number(
+          resposta.headers.get('X-Total-Count') ??
+          (Array.isArray(corpo) ? clientes.length : corpo?.items ?? clientes.length)
+        );
 
-    )
-    .subscribe((clientes) => {
-      this.dataSource = clientes;
+      });
+
+  }
+
+  alterarPagina(event: PageEvent): void {
+
+    this.page = event.pageIndex + 1;
+    this.limit = event.pageSize;
+
+    this.loadCliente();
+
+  }
+
+  abrirDialog(): void {
+
+    const dialogRef = this.dialog.open(
+      DialogClienteComponent,
+      {
+        width: '400px',
+        maxWidth: '95vw',
+        autoFocus: false
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((resultado) => {
+
+      if (resultado) {
+        this.loadCliente();
+      }
 
     });
 
-}
-
-abrirDialog(): void {
-
-  this.dialog.open(DialogClienteComponent, {
-
-    width: '400px',
-    maxWidth: '95vw',
-
-    autoFocus: false,
-
-    data: {
-      modo: 'adicionar'
-    }
-
-  });
-
-}
+  }
 
 }

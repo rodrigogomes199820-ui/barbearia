@@ -1,0 +1,49 @@
+<div class="modal-card">
+
+  <!-- CABEÇALHO -->
+
+  <div class="modal-header">
+
+    <div class="modal-title">
+
+      <h2>
+        {{ titulo }}
+      </h2>
+
+    </div>
+
+    <button
+      mat-icon-button
+      type="button"
+      class="close-icon"
+      aria-label="Fechar"
+      (click)="fecharDialog()"
+    >
+      <mat-icon aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.3 9.17 12 2.88 5.7 4.29 4.29 10.59 10.59 16.89 4.29z" />
+        </svg>
+      </mat-icon>
+    </button>
+
+  </div>
+
+
+  <!-- CONTEÚDO -->
+
+  <div class="modal-body">
+
+    <ng-content></ng-content>
+
+  </div>
+
+
+  <!-- RODAPÉ -->
+
+  <div class="modal-footer">
+
+    <ng-content select="[dialog-actions]"></ng-content>
+
+  </div>
+
+</div>

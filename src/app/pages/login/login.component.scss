@@ -39,7 +39,7 @@
 
     border-radius: 50%;
 
-    background: #c99a4b;
+    background: var(--color-brand);
 
     mat-icon {
       width: 36px;
@@ -80,7 +80,7 @@ mat-form-field {
   height: 48px;
   margin-top: 16px;
 
-  background: #c99a4b !important;
+  background: var(--color-brand) !important;
   color: #ffffff !important;
 
   font-size: 16px;
@@ -91,6 +91,6 @@ mat-form-field {
   }
 
   &:hover {
-    background: #b8873f !important;
+    background: var(--color-brand-dark) !important;
   }
 }
