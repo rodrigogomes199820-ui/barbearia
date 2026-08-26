@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+
+  font-size: 14px;
+  color: #1a1a1a;
+
+  outline: none;
+  background: #fafafa;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.field input:focus {
+  border-color: #2a6fd1;
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(42, 111, 209, 0.1);
+}
+
+.field input.ng-invalid.ng-touched {
+  border-color: #d32f2f;
+}
+
+.field input::placeholder {
+  color: #aaa;
+}
+
+.error {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+
+/* BOTÕES */
+
+[dialog-actions] {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+.btn-fechar {
+  padding: 6px 16px !important;
+
+  border-radius: 8px !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  border-color: #dcdcdc !important;
+  color: #555 !important;
+
+  line-height: normal !important;
+}
+
+.btn-adicionar {
+  padding: 6px 20px !important;
+
+  border-radius: 8px !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  background-color: #2a6fd1 !important;
+  color: #ffffff !important;
+
+  line-height: normal !important;
+
+  box-shadow: none !important;
+}
+
+.btn-adicionar:hover:not(:disabled) {
+  background-color: #1f5cb8 !important;
+}
+
+.btn-adicionar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

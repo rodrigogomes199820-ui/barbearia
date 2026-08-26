@@ -18,6 +18,9 @@ import { MainComponent } from './main/main.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { DialogClienteComponent } from './pages/clientes/dialog-cliente/dialog-cliente.component';
 import { DialogBaseComponent } from './shared/components/dialog-base/dialog-base.component';
+import { DialogEditarClienteComponent } from './pages/clientes/dialog-editar-cliente/dialog-editar-cliente.component';
+import { DialogExcluirClienteComponent } from './pages/clientes/dialog-excluir-cliente/dialog-excluir-cliente.component';
+import { DialogHistoricoClienteComponent } from './pages/clientes/dialog-historico-cliente/dialog-historico-cliente.component';
 
 
 
@@ -33,6 +36,9 @@ import { DialogBaseComponent } from './shared/components/dialog-base/dialog-base
          ClientesComponent,
          DialogClienteComponent,
          DialogBaseComponent,
+         DialogEditarClienteComponent,
+         DialogExcluirClienteComponent,
+         DialogHistoricoClienteComponent,
         
   ],
   imports: [

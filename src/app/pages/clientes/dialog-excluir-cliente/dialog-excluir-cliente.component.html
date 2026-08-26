@@ -1,0 +1,39 @@
+<app-dialog-base
+  titulo="Excluir cliente"
+  (fechar)="cancelar()"
+>
+
+  <div class="container">
+
+    <p class="texto">
+      Tem certeza que deseja excluir
+      <strong>{{ cliente.nome }}</strong>?
+    </p>
+
+  </div>
+
+
+  <div dialog-actions class="botoes">
+
+    <button
+      mat-stroked-button
+      type="button"
+      (click)="cancelar()"
+    >
+      Voltar
+    </button>
+
+    <button
+      mat-flat-button
+      type="button"
+      class="btn-excluir"
+      (click)="excluir()"
+    >
+      Excluir
+    </button>
+
+  </div>
+
+</app-dialog-base>
+
+

@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  background-color: #fff3cd;
+}
+
+.texto {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.texto strong {
+  font-weight: 600;
+  color: #222;
+}
+
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-excluir {
+  background-color: #d32f2f !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.btn-excluir:hover {
+  background-color: #b71c1c !important;
+}

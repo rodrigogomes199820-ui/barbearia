@@ -1,0 +1,122 @@
+<app-dialog-base
+  titulo="Editar cliente"
+  (fechar)="cancelar()"
+>
+
+  <form
+    [formGroup]="clienteForm"
+    (ngSubmit)="salvar()"
+  >
+
+    <div class="field">
+
+      <label>Nome completo</label>
+
+      <input
+        matInput
+        type="text"
+        placeholder="Digite o nome completo"
+        formControlName="nome"
+      />
+
+      <span
+        class="error"
+        *ngIf="
+          clienteForm.get('nome')?.invalid &&
+          clienteForm.get('nome')?.touched
+        "
+      >
+        Nome é obrigatório
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Email</label>
+
+      <input
+        matInput
+        type="email"
+        placeholder="exemplo@email.com"
+        formControlName="email"
+      />
+
+      <span
+        class="error"
+        *ngIf="
+          clienteForm.get('email')?.invalid &&
+          clienteForm.get('email')?.touched
+        "
+      >
+        Informe um email válido
+      </span>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Data de nascimento</label>
+
+      <input
+        matInput
+        type="date"
+        formControlName="dataNascimento"
+      />
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Telefone</label>
+
+      <input
+        matInput
+        type="tel"
+        placeholder="(00) 00000-0000"
+        formControlName="telefone"
+      />
+
+      <span
+        class="error"
+        *ngIf="
+          clienteForm.get('telefone')?.invalid &&
+          clienteForm.get('telefone')?.touched
+        "
+      >
+        Telefone é obrigatório
+      </span>
+
+    </div>
+
+
+    <!-- BOTÕES DO DIALOG BASE -->
+
+    <div dialog-actions>
+
+      <button
+        mat-stroked-button
+        type="button"
+        class="btn-fechar"
+        (click)="cancelar()"
+      >
+        Voltar
+      </button>
+
+      <button
+        mat-flat-button
+        type="submit"
+        class="btn-adicionar"
+        [disabled]="clienteForm.invalid"
+      >
+        Atualizar
+      </button>
+
+    </div>
+
+  </form>
+
+</app-dialog-base>

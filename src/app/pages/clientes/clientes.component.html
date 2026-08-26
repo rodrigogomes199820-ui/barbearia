@@ -110,12 +110,23 @@
 
     <mat-menu #menu="matMenu">
 
-      <button mat-menu-item>
+      <button 
+      (click)="editarCliente(cliente)"
+      mat-menu-item>
         <mat-icon>edit</mat-icon>
         <span>Editar</span>
       </button>
 
-      <button mat-menu-item>
+       <button 
+      (click)="historicoCliente(cliente)"
+      mat-menu-item>
+        <mat-icon>History</mat-icon>
+        <span>Historico</span>
+      </button>
+
+      <button 
+      (click)="excluirCliente(cliente)"
+       mat-menu-item>
         <mat-icon>delete</mat-icon>
         <span>Excluir</span>
       </button>

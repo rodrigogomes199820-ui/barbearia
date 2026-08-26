@@ -4,7 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 
 import { DialogClienteComponent } from './dialog-cliente/dialog-cliente.component';
-
+import { DialogEditarClienteComponent } from './dialog-editar-cliente/dialog-editar-cliente.component';
+import { DialogExcluirClienteComponent } from './dialog-excluir-cliente/dialog-excluir-cliente.component';
+import { DialogHistoricoClienteComponent } from './dialog-historico-cliente/dialog-historico-cliente.component';
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -94,5 +96,80 @@ export class ClientesComponent implements OnInit {
     });
 
   }
+
+
+  editarCliente(cliente: any): void {
+
+    const dialogRef = this.dialog.open(
+      DialogEditarClienteComponent,
+      {
+        width: '400px',
+        maxWidth: '95vw',
+        autoFocus: false,
+        data: cliente
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((resultado) => {
+
+      if (resultado) {
+        this.loadCliente();
+      }
+
+    });
+
+  }
+
+   excluirCliente(cliente: any): void {
+
+    const dialogRef = this.dialog.open(
+      DialogExcluirClienteComponent,
+      {
+        width: '400px',
+        maxWidth: '95vw',
+        autoFocus: false,
+        data: {
+          id: cliente.id,
+          nome: cliente.nome
+        }
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((resultado) => {
+
+      if (resultado) {
+        this.loadCliente();
+      }
+
+    });
+
+  }
+
+  historicoCliente(cliente: any): void {
+
+    const dialogRef = this.dialog.open(
+      DialogHistoricoClienteComponent,
+      {
+        width: '400px',
+        maxWidth: '95vw',
+        autoFocus: false,
+        data: {
+          id: cliente.id,
+          nome: cliente.nome
+        }
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((resultado) => {
+
+      if (resultado) {
+        this.loadCliente();
+      }
+
+    });
+
+  }
+
+
 
 }

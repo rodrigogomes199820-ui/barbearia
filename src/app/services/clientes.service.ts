@@ -47,4 +47,19 @@ export class ClientesService {
 
   }
 
+  atualizarCliente(id: string | number, cliente: any): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiUrl}/clientes/${id}`,
+      cliente
+    );
+  }
+
+  excluirCliente(id: string): Observable<any> {
+
+  return this.http.delete<any>(
+    `${this.apiUrl}/clientes/${id}`
+  );
+
+}
+
 }
