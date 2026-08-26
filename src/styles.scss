@@ -13,3 +13,39 @@
 
 html, body { height: 100%; overflow: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.snackbar-sucesso {
+	--mdc-snackbar-container-color: #16a34a;
+	--mdc-snackbar-supporting-text-color: #ffffff;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+
+	border-radius: 10px !important;
+	font-weight: 500;
+}
+
+.snackbar-erro {
+	--mdc-snackbar-container-color: #dc2626;
+	--mdc-snackbar-supporting-text-color: #ffffff;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+
+	border-radius: 10px !important;
+	font-weight: 500;
+}
+
+.snackbar-aviso {
+	--mdc-snackbar-container-color: #d97706;
+	--mdc-snackbar-supporting-text-color: #ffffff;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+
+	border-radius: 10px !important;
+	font-weight: 500;
+}
+
+.snackbar-informacao {
+	--mdc-snackbar-container-color: #2563eb;
+	--mdc-snackbar-supporting-text-color: #ffffff;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+
+	border-radius: 10px !important;
+	font-weight: 500;
+}

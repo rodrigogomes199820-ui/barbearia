@@ -1,7 +1,10 @@
+
 import { ClientesService } from './../../../services/clientes.service';
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MensagensService } from '../../../services/mensagens.service';
+import { MatSnackBarRef, TextOnlySnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog-cliente',
@@ -12,13 +15,15 @@ export class DialogClienteComponent {
 
   clienteForm: FormGroup;
   selectedTab = 0;
+  private mensagemCarregando?: MatSnackBarRef<TextOnlySnackBar>;
 
   constructor(
     private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<DialogClienteComponent>,
       @Inject(MAT_DIALOG_DATA)
     public data: any,
-    private clientesService: ClientesService
+    private clientesService: ClientesService,
+    private mensagensService: MensagensService
 
   ) {
 
@@ -53,11 +58,15 @@ export class DialogClienteComponent {
     dataNascimento: this.converterDataParaApi(this.clienteForm.value.dataNascimento)
   };
 
+  this.mensagemCarregando = this.mensagensService.carregando('Cadastrando cliente...');
 
   this.clientesService.adicionarCliente(cliente)
     .subscribe({
 
       next: (resposta) => {
+
+        this.mensagemCarregando?.dismiss();
+        this.mensagensService.sucesso('Cliente cadastrado com sucesso!');
 
         
         this.dialogRef.close(true);
@@ -67,6 +76,9 @@ export class DialogClienteComponent {
       error: (erro) => {
 
         console.error('Erro ao cadastrar cliente:', erro);
+
+        this.mensagemCarregando?.dismiss();
+        this.mensagensService.erro('Não foi possível cadastrar o cliente.');
 
       }
 

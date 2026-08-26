@@ -47,6 +47,48 @@
       "email": "flavio@gmail.com",
       "telefone": "7598868-5555",
       "id": "b8nPH7B-QUs"
+    },
+    {
+      "nome": "Cezar Santos",
+      "dataNascimento": "2006-06-20",
+      "email": "cesar@gmail.com",
+      "telefone": "7596666-6666",
+      "id": "G17LRhU2XdM"
+    },
+    {
+      "nome": "Luiz Silva",
+      "dataNascimento": "1990-08-30",
+      "email": "luiz@gmail.com",
+      "telefone": "759999-9999",
+      "id": "Xpd_CqwRx30"
+    },
+    {
+      "nome": "Alex Branco",
+      "dataNascimento": "1950-12-20",
+      "email": "alex@gmail.com",
+      "telefone": "758888-8888",
+      "id": "3_QbqdH0Q20"
+    },
+    {
+      "nome": "Antonio Fernandes",
+      "dataNascimento": "2006-06-20",
+      "email": "antonio@gmail.com",
+      "telefone": "759911-96222",
+      "id": "3GYOXDktf_4"
+    },
+    {
+      "nome": "Matheus Castro",
+      "dataNascimento": "2000-02-10",
+      "email": "matheus@gmail.com",
+      "telefone": "759998-8888",
+      "id": "bYzytsOLQa8"
+    },
+    {
+      "nome": "Celio Souza",
+      "dataNascimento": "2005-05-03",
+      "email": "celio@gmail.com",
+      "telefone": "759666-5656",
+      "id": "rMfBC6nqZn4"
     }
   ],
   "barbeiros": [
