@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { BarbeirosComponent } from './pages/barbeiros/barbeiros.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
         {
         path: 'clientes',
         component: ClientesComponent
+      },
+        {
+        path: 'barbeiro',
+        component: BarbeirosComponent
       }
     ]
   }

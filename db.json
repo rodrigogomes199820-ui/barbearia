@@ -59,16 +59,25 @@
     }
   ],
   "barbeiros": [
-    {
-      "id": "1",
-      "nome": "João Pedro",
-      "especialidade": "Corte e Barba"
-    },
-    {
-      "id": "2",
-      "nome": "Marcelo Alves",
-      "especialidade": "Corte Degradê"
-    }
+  {
+    "id": "1",
+    "nome": "João Pedro",
+    "email": "joao@gmail.com",
+    "telefone": "(77) 99999-1111",
+    "especialidade": "Corte e Barba"
+    
+   
+  },
+  {
+    "id": "2",
+    "nome": "Marcelo Alves",
+    "email": "marcelo@gmail.com",
+    "telefone": "(77) 99999-2222",
+    "especialidade": "Corte Degradê"
+    
+    
+  }
+
   ],
   "servicos": [
     {
